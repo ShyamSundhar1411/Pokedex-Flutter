@@ -9,7 +9,7 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Todo App",
+      title: "Pokedex App",
       initialRoute: '/',
       routes: {
         MyHomePage.routeName: (ctx)=>MyHomePage(),
