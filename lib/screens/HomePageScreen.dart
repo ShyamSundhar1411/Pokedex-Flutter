@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex_app/widgets/type_display_widget.dart';
+import 'package:pokedex_app/widgets/TypeDisplayWidget.dart';
 import '../data/pokemone_types.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -36,11 +36,11 @@ class MyHomePage extends StatelessWidget {
               padding: EdgeInsets.all(10)
               ,child:TypeDisplayWidget(types[index]));
           }, childCount: types.length),
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 3/2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 2/1,
+            crossAxisSpacing: 2,
+            mainAxisSpacing: 2,
           ),
         )
       ],
