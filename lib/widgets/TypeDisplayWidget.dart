@@ -27,7 +27,7 @@ class TypeDisplayWidget extends StatelessWidget {
                   onTap: () {},
                   child: Stack(
                     children: [
-                      PokeBallDecorator(itemHeight)
+                      PokeBallDecorator(itemHeight),
                     ],
                     )
                   )

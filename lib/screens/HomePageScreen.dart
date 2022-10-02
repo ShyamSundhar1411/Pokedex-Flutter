@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex_app/widgets/TypeDisplayWidget.dart';
-import '../data/pokemone_types.dart';
+import 'package:pokedex_app/widgets/SearchFormWidget.dart';
+import '../widgets/CategoryDisplayWidget.dart';
+import '../data/pokemon_types.dart';
+import '../data/category.dart';
 
 class MyHomePage extends StatelessWidget {
   static const routeName = '/';
@@ -11,17 +13,20 @@ class MyHomePage extends StatelessWidget {
       slivers: [
         SliverAppBar(
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30))),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
+                ),
+                
+              ),
           expandedHeight: 100.0,
           floating: false,
           pinned: false,
           snap: false,
-          title: Center(
-            child: Text("Pokedex"),
-          ),
-          backgroundColor: Colors.deepOrangeAccent,
+          elevation: 0,
+          title:Text("Pokedex"),
+          centerTitle: true,
+          backgroundColor: Colors.purpleAccent,
           flexibleSpace: FlexibleSpaceBar(
             stretchModes: <StretchMode>[
               StretchMode.zoomBackground,
@@ -30,15 +35,21 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
+        SliverToBoxAdapter(
+          child:SizedBox(
+            child: SearchFormDisplayWidget()
+
+          ),
+        ),
         SliverGrid(
-          delegate: SliverChildBuilderDelegate((context, index) {
-            return Container(
-              padding: EdgeInsets.all(10)
-              ,child:TypeDisplayWidget(types[index]));
-          }, childCount: types.length),
+          delegate: SliverChildBuilderDelegate(
+              (context, index) => Container(
+                  padding: EdgeInsets.all(5),
+                  child: CategoryDisplayWidget(categories[index])),
+              childCount: categories.length),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 2/1,
+            childAspectRatio: 2 / 1,
             crossAxisSpacing: 2,
             mainAxisSpacing: 2,
           ),
