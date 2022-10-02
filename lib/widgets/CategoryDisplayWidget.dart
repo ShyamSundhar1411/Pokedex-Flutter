@@ -22,8 +22,8 @@ class CategoryDisplayWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15)),
               clipBehavior: Clip.antiAlias,
               child: InkWell(
-                  splashColor: Colors.white,
-                  highlightColor: Colors.black,
+                  splashColor: Colors.white10,
+                  highlightColor: Colors.white30,
                   onTap: () {},
                   child: Stack(
                     children: [
