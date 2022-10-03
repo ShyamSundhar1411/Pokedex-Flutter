@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-class Category {
+import 'package:provider/provider.dart';
+class Category extends ChangeNotifier{
   final String name;
   final Color color;
   Category(this.name, this.color);
